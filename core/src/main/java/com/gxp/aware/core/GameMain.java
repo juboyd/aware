@@ -6,9 +6,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class GameMain implements ApplicationListener
 {
-
+	static final Logger LOG = LoggerFactory.getLogger(GameMain.class);
+	
+	private int gameWidth;
+	private int gameHeight;
+	
 	Texture texture;
 	SpriteBatch batch;
 	float elapsed;
@@ -23,6 +30,9 @@ public class GameMain implements ApplicationListener
 	@Override
 	public void resize(int width, int height)
 	{
+		LOG.info("initial size {}x{}", width, height);
+		gameWidth = width;
+		gameHeight = height;
 	}
 
 	@Override
@@ -31,7 +41,7 @@ public class GameMain implements ApplicationListener
 		elapsed += Gdx.graphics.getDeltaTime();
 
 		clearBlack();
-		
+
 		handleTouch();
 
 		doDraw();
