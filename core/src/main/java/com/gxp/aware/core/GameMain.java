@@ -13,7 +13,7 @@ public class GameMain implements ApplicationListener {
 
 	@Override
 	public void create () {
-		texture = new Texture(Gdx.files.internal("libgdx-logo.png"));
+		texture = new Texture(Gdx.files.internal("monsters/type_1.png"));
 		batch = new SpriteBatch();
 	}
 
@@ -27,7 +27,7 @@ public class GameMain implements ApplicationListener {
 		Gdx.gl.glClearColor(0, 0, 0, 0);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(texture, 100+100*(float)Math.cos(elapsed), 100+25*(float)Math.sin(elapsed));
+		batch.draw(texture, 100f, 100f, 64f, 64f);
 		batch.end();
 	}
 

@@ -40,6 +40,9 @@
 	<profiles>
 		<profile>
 			<id>desktop</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<modules>
 				<module>desktop</module>
 			</modules>
